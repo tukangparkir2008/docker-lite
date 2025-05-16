@@ -72,9 +72,8 @@ config:
 	echo "<? \$$db_host='localhost:$(DB_PORT)';\$$db_user='root';\$$db_pass='$(DB_ROOT_PASS)';\$$db_name='jbsakad'; ?>" > $(CONFIG_FILE)
 	@echo "File konfigurasi $(CONFIG_FILE) telah dibuat/diperbarui."
 
-
 # Target utama untuk instalasi
-install: copy-app set-permissions composer-install config setup-database
+install: copy-app set-permissions config setup-database
 	@echo "Instalasi JIBAS selesai."
 	@echo "Pastikan Nginx dan PHP-FPM di host Anda sudah dikonfigurasi dengan benar."
 	@echo "Akses aplikasi melalui browser Anda."
