@@ -1,5 +1,5 @@
 services:
-  db:
+  jibas_db:
     image: mariadb:11
     restart: unless-stopped
     environment:
