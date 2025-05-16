@@ -1,0 +1,25 @@
+services:
+  db:
+    image: mariadb:11
+    container_name: jibas_mariadb
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD} # Password root MariaDB
+      MYSQL_DATABASE: ${DB_DATABASE}           # Opsional: Membuat database saat startup
+      MYSQL_USER: ${DB_USERNAME}               # Opsional: Membuat user saat startup
+      MYSQL_PASSWORD: ${DB_PASSWORD}           # Opsional: Password untuk user di atas
+    volumes:
+      - "jibas_mysql_data:/var/lib/mysql"      # Volume untuk persistensi data MariaDB
+      # Jika Anda memiliki file konfigurasi kustom untuk MariaDB (my.cnf atau sejenisnya):
+      - ./config/mariadb/custom.cnf:/etc/mysql/conf.d/custom.cnf
+    ports:
+      - "${DB_PORT}:3306" # Memetakan port dari host ke kontainer
+    networks:
+      - jibas_network
+
+volumes:
+  jibas_mysql_data: # Definisi volume bernama
+
+networks:
+  jibas_network: # Definisi network kustom
+    driver: bridge
