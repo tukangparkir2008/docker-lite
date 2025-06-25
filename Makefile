@@ -57,13 +57,13 @@ set-permissions:
 # Target untuk setup database
 setup-database:
 	@echo "Memulai setup database..."
-	@if [ ! -f "$(SQL_FULL_PATH)" ]; then \
-		echo "ERROR: File SQL '$(SQL_FULL_PATH)' tidak ditemukan!"; \
-		exit 1; \
-	fi
+	#@if [ ! -f "$(SQL_FULL_PATH)" ]; then \
+		#echo "ERROR: File SQL '$(SQL_FULL_PATH)' tidak ditemukan!"; \
+		#exit 1; \
+	#fi
 	# Mengimpor skema database menggunakan user root
-	@echo "Mengimpor skema database dari $(SQL_FULL_PATH) menggunakan user root..."
-	@mysql -h "$(DB_HOST)" -P "$(DB_PORT)" -u root -p"$(DB_ROOT_PASS)" < "$(SQL_FULL_PATH)"
+	#@echo "Mengimpor skema database dari $(SQL_FULL_PATH) menggunakan user root..."
+	#@mysql -h "$(DB_HOST)" -P "$(DB_PORT)" -u root -p"$(DB_ROOT_PASS)" < "$(SQL_FULL_PATH)"
 	@echo "Setup database selesai."
 	
 
