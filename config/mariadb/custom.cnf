@@ -4,3 +4,4 @@ max_connections = 256
 key_buffer=128M
 max_allowed_packet=32M
 innodb_buffer_pool_size=128M
+sql_mode = "NO_ENGINE_SUBSTITUTION"
