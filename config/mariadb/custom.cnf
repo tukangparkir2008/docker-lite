@@ -1,8 +1,8 @@
 [mysqld]
-bind-address = 0.0.0.0
-max_connections = 256
+bind-address=0.0.0.0
+max_connections=256
 key_buffer=128M
 max_allowed_packet=1G
-max_connections = 500
+max_connections=500
 innodb_buffer_pool_size=1G
-sql_mode = "NO_ENGINE_SUBSTITUTION"
+sql_mode="NO_ENGINE_SUBSTITUTION"
