@@ -6,3 +6,4 @@ max_allowed_packet=1G
 max_connections=500
 innodb_buffer_pool_size=1G
 sql_mode="NO_ENGINE_SUBSTITUTION"
+default-time-zone = '+07:00'
