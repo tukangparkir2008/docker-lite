@@ -6,7 +6,6 @@ services:
       - TZ=Asia/Jakarta
       - MYSQL_ROOT_PASSWORD=${DB_ROOT_PASSWORD}
       - MYSQL_USER=${DB_USERNAME}
-      - TZ=Asia/Jakarta
     volumes:
       - "jibas_mysql_data:/var/lib/mysql"
       - ./config/mariadb/custom.cnf:/etc/mysql/conf.d/custom.cnf
